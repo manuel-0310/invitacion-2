@@ -12,10 +12,47 @@
 </head>
 
 <body>
+    <audio id="miMusica" loop autoplay>
+        <source src="src/cancion.mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="btnMusica" class="boton-flotante">
+        <span id="texto">Pausar</span>
+    </button>
+
+    <style>
+        .boton-flotante {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 9999;
+
+            background: #5F6754;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+        }
+
+        .boton-flotante:hover {
+            transform: scale(1.05);
+        }
+
+        .sonando {
+            background: #333;
+        }
+    </style>
 
     <header class="hero">
         <div class="hero-content">
-            <h1>Nombres de la <br>pareja</h1>
+            <h1>Luisa y Leonardo</h1>
         </div>
     </header>
 
@@ -43,7 +80,7 @@
                 <label>SEGUNDOS</label>
             </div>
         </div>
-        <p class="wedding-date">23 de Mayo, 2026. 3:00 PM (ejemplo)</p>
+        <p class="wedding-date">19 de Julio, 2026. 3:00 PM</p>
     </section>
 
     <div class="divider"><img src="src/separador.png" alt="decoración"></div>
@@ -51,9 +88,37 @@
     <section class="story-section">
         <h2 class="script-font">Nuestra historia</h2>
         <div class="story-text">
-            <p><b>¡Aqui pueden contar un poco de su historia o dar informacion importante del evento para los invitados! </b><br> <br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas explicabo fuga, iure corporis tempore
-                laborum ratione reiciendis illum veritatis vitae delectus numquam? Quo, alias numquam delectus dolorem
-                repellat odio iusto?                
+            en el momento indicado, cuando menos lo esperábamos, nuestro hilo rojo nos unió, recordándonos que lo
+            que está destinado a encontrarse siempre lo hace. Puede estirarse con la distancia, puede enredarse con
+            el tiempo, pero nunca se rompe. <br> <br>
+
+            Éramos dos personas en países distintos, bajo cielos diferentes, hasta que en Navidad, tiempo de
+            milagros y esperanza, nuestras vidas coincidieron y entendimos que no era una casualidad, sino un
+            propósito. <br><br>
+
+            Cada conversación, cada despedida y cada reencuentro fueron tejiendo un amor paciente y verdadero.
+            Aprendimos que el amor no solo se siente, se construye y se elige cada día. El Río Hudson, fue testigo
+            de ese comienzo, fortaleciendo aún más el lazo que hoy nos une. Lo que inició como un encuentro
+            inesperado se transformó en raíz y en hogar: un hogar lleno de respeto, ilusión y sueños compartidos,
+            con Dios como guía y el amor como motor, porque existen amores que estremecen el alma, que erizan la
+            piel y te recuerdan que todo tiene sentido al lado de la persona correcta. <br><br>
+
+            Hoy continuamos escribiendo nuestros sueños, nuestros anhelos, nuestro amor.
+            Y nuestra historia… continuará, en cada paso juntos, en cada meta alcanzada,
+            en cada aventura que la vida nos regale y en cada “sí” que sigamos eligiendo cada día. <br><br>
+
+            -Leo & Lu <br><br>
+
+            <b style="font-size: larger;">Hoy queremos tejer el nudo de los tres hilos: Dios, el amor y la vida</b>
+            <br><br>
+            En nuestro camino hemos recibido el regalo más grande: una familia maravillosa, la que nos vio crecer y
+            la que elegimos con el corazón. Cada uno de ustedes ha sido luz en nuestra historia, abrazo en nuestros
+            aprendizajes y testigo del amor que hoy nos une. <br><br>
+            Con el corazón lleno de gratitud, anunciamos que recibiremos la bendición de Dios, y nos alegra
+            profundamente contar con su presencia para acompañarnos en este momento tan especial, que marca nuestro
+            continuará en una vida juntos.
+
+
             </p>
         </div>
     </section>
@@ -62,19 +127,27 @@
 
     <section class="gallery-section">
         <h2 class="script-font">Nuestro compromiso</h2>
-        <p><b>*Imagenes de ejemplo*</b></p>
         <div class="masonry-gallery">
-            <div class="photo"><img src="src/1.jpeg" alt="Compromiso"></div>
-            <div class="photo"><img src="src/8.jpeg" alt="Compromiso"></div>
-            <div class="photo"><img src="src/4.jpeg" alt="Compromiso"></div>
-            <div class="photo"><img src="src/2.jpeg" alt="Compromiso"></div>
-            <div class="photo"><img src="src/3.jpeg" alt="Compromiso"></div>
-            <div class="photo"><img src="src/5.jpeg" alt="Compromiso"></div>
-            <div class="photo"><img src="src/7.jpeg" alt="Compromiso"></div>
-            <div class="photo"><img src="src/9.jpeg" alt="Compromiso"></div>
+            <div class="photo"><img src="src/1.jpg" alt="Compromiso"></div>
+            <div class="photo"><img src="src/2.jpg" alt="Compromiso"></div>
+            <div class="photo"><img src="src/3.jpg" alt="Compromiso"></div>
+            <div class="photo"><img src="src/4.jpg" alt="Compromiso"></div>
+            <div class="photo"><img src="src/5.jpg" alt="Compromiso"></div>
+            <div class="photo"><img src="src/6.jpg" alt="Compromiso"></div>
+            <div class="photo"><img src="src/7.jpg" alt="Compromiso"></div>
+            <div class="photo"><img src="src/8.jpg" alt="Compromiso"></div>
+            <div class="photo"><img src="src/9.jpg" alt="Compromiso"></div>
+            <div class="photo"><img src="src/10.jpg" alt="Compromiso"></div>
+            <div class="photo"><img src="src/11.jpg" alt="Compromiso"></div>
+            <div class="photo"><img src="src/12.jpg" alt="Compromiso"></div>
+            <div class="photo"><img src="src/13.jpg" alt="Compromiso"></div>
+            <div class="photo"><img src="src/14.jpg" alt="Compromiso"></div>
+            <div class="photo"><img src="src/15.jpg" alt="Compromiso"></div>
+            <div class="photo"><img src="src/16.jpg" alt="Compromiso"></div>
+            <div class="photo"><img src="src/17.jpg" alt="Compromiso"></div>
         </div>
     </section>
-
+    <!--
     <div class="divider"><img src="src/separador.png" alt="decoración"></div>
     <section class="timeline-section">
         <h2 class="script-font">Nuestro gran día</h2>
@@ -120,13 +193,14 @@
 
         </div>
     </section>
+-->
     <div class="divider"><img src="src/separador.png" alt="decoración"></div>
     <section class="dresscode-section">
         <h2 class="script-font">Código de vestimenta</h2>
 
         <div class="dresscode-container">
-            <p class="dresscode-intro">*Indicaciones sobre la vestimenta de los invitados para el día del evento*</p>
-
+            <p class="dresscode-intro">Vestimenta formal</p>
+            <!--
             <div class="dresscode-details">
                 <div class="gender-dress">
                     <strong>CABALLEROS</strong>
@@ -138,11 +212,11 @@
                     <p>*Recomendaciones para las damas*</p>
                 </div>
             </div>
-
+        -->
             <div class="dresscode-image">
                 <img src="src/vestimenta.png" alt="Inspiración Vestimenta" class="dresscode-image">
             </div>
-            <p class="color-reserve">Nota: El color blanco y beige queda reservado para la novia. (ejemplo)</p>
+            <p class="color-reserve">Nota: El color blanco y beige quedan reservados</p>
 
 
         </div>
@@ -151,7 +225,6 @@
         <div class="tarjeta" id="tarjeta">
             <div class="contenido-tarjeta">
                 <div class="lluvia-sobres">
-                    <p>*Información sobre regalos*</p>
                     <img src="src/sobre-cerrado.PNG" alt="Sobre"
                         style="width: 200px; margin-bottom: -40px; margin-top: -50px;">
                     <p style="font-family: 'Great Vibes', cursive; font-size: 2rem; margin: 0;">Lluvia de Sobres</p>
@@ -163,11 +236,11 @@
     <div class="divider"><img src="src/separador.png" alt="decoración"></div>
     <section class="location-section">
         <h2 class="script-font">Ubicación</h2>
-        <p class="location-name">*nombre de la ubicación*</p>
-        <p>Puede haber una sola imagen, una galeria de varias imagenes o las dos</p>
+        <p class="location-name"><b>Hotel Punta Larga</b></p>
         <div class="location-image">
-            <img src="src/hacienda1.jpg" alt="Hacienda" class="hacienda-img">
+            <img src="src/hotel.jpg" alt="Hotel" class="hacienda-img">
         </div>
+        <!--
         <section class="gallery-section">
             <div class="masonry-gallery">
                 <div class="photo"><img src="src/hacienda1.jpg" alt="Compromiso"></div>
@@ -183,11 +256,20 @@
                 <div class="photo"><img src="src/hacienda12.jpg" alt="Compromiso"></div>
             </div>
         </section>
+    -->
         <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13261.068870005722!2d-72.93695689409576!3d5.718597094676793!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e6a45dc718b6c21%3A0x8dd9697c02548b46!2sPlaza%20de%20la%20Villa!5e0!3m2!1ses-419!2sco!4v1770863307083!5m2!1ses-419!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </section>
-    <div class="divider"><img src="src/separador.png" alt="decoración"></div>
 
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3969.5506239045912!2d-72.9777486!3d5.7775975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e6a473bcc0eaa57%3A0xfe713f753db6fc08!2sHotel%20Puntalarga!5e0!3m2!1ses-419!2sco!4v1772150717484!5m2!1ses-419!2sco"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+    <div class="divider"><img src="src/separador.png" alt="decoración" style="margin-bottom: -25px; "></div>
+
+    <img src="src/logo.png" alt="nombres" class="nombres" style="margin-bottom: -30px; border-radius: 5%;">
+
+    <div class="divider"><img src="src/separador.png" alt="decoración"></div>
+    <!--
     <section class="rsvp-section">
         <h2 class="script-font section-title">Confirma tu asistencia</h2>
         <p class="section-subtitle">¡Esperamos contar contigo!</p>
@@ -230,7 +312,7 @@
             </form>
         </div>
 
-
+    -->
     </section>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 

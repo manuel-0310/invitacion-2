@@ -1,4 +1,4 @@
-const weddingDate = new Date("May 23, 2026 15:00:00").getTime();
+const weddingDate = new Date("Jul 19, 2026 15:00:00").getTime();
 
 const timer = setInterval(function() {
     const now = new Date().getTime();
@@ -20,28 +20,27 @@ const timer = setInterval(function() {
     }
 }, 1000);
 
-(function() {
-    emailjs.init("O9TA18-zps7iaEptM");
-})();
+const audio = document.getElementById("miMusica");
+        const btn1 = document.getElementById("btnMusica");
+        const texto = document.getElementById("texto");
 
+        // Intentar reproducir automáticamente
+        window.addEventListener("load", () => {
+            audio.play().then(() => {
+                btn1.classList.add("sonando");
+            }).catch(() => {
+                texto.innerText = "Reproducir";
+            });
+        });
 
-const btn = document.getElementById('button-send');
-
-document.getElementById('rsvp-form').addEventListener('submit', function(event) {
-   event.preventDefault();
-
-   btn.innerText = 'ENVIANDO...';
-   btn.style.opacity = '0.7';
-
-   emailjs.sendForm('', '', this)
-    .then(() => {
-      btn.innerText = '¡ENVIADO CON ÉXITO!';
-      btn.style.backgroundColor = '#27ae60';
-      alert('¡Gracias! Tu confirmación ha sido recibida.');
-      this.reset();
-    }, (err) => {
-      btn.innerText = 'ERROR AL ENVIAR';
-      btn.style.backgroundColor = '#e74c3c';
-      alert('Hubo un error: ' + JSON.stringify(err));
-    });
-});
+        btn1.addEventListener("click", () => {
+            if (audio.paused) {
+                audio.play();
+                btn1.classList.add("sonando");
+                texto.innerText = "Pausar";
+            } else {
+                audio.pause();
+                btn1.classList.remove("sonando");
+                texto.innerText = "Reproducir";
+            }
+        });
