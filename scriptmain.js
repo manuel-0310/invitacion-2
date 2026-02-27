@@ -21,26 +21,17 @@ const timer = setInterval(function() {
 }, 1000);
 
 const audio = document.getElementById("miMusica");
-        const btn1 = document.getElementById("btnMusica");
-        const texto = document.getElementById("texto");
+const btnMusica = document.getElementById("btnMusica");
+const texto = document.getElementById("texto");
 
-        // Intentar reproducir automáticamente
-        window.addEventListener("load", () => {
-            audio.play().then(() => {
-                btn1.classList.add("sonando");
-            }).catch(() => {
-                texto.innerText = "Reproducir";
-            });
-        });
-
-        btn1.addEventListener("click", () => {
-            if (audio.paused) {
-                audio.play();
-                btn1.classList.add("sonando");
-                texto.innerText = "Pausar";
-            } else {
-                audio.pause();
-                btn1.classList.remove("sonando");
-                texto.innerText = "Reproducir";
-            }
-        });
+btnMusica.addEventListener("click", () => {
+    if (audio.paused) {
+        audio.play();
+        btnMusica.classList.add("sonando");
+        texto.innerText = "Pausar";
+    } else {
+        audio.pause();
+        btnMusica.classList.remove("sonando");
+        texto.innerText = "Reproducir canción";
+    }
+});

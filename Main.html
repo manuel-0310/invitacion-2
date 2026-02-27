@@ -12,12 +12,12 @@
 </head>
 
 <body>
-    <audio id="miMusica" loop autoplay>
+    <audio id="miMusica" loop>
         <source src="src/cancion.mp3" type="audio/mpeg">
     </audio>
 
     <button id="btnMusica" class="boton-flotante">
-        <span id="texto">Pausar</span>
+        <span id="texto">Reproducir canción</span>
     </button>
 
     <style>
@@ -26,7 +26,7 @@
             top: 20px;
             right: 20px;
             z-index: 9999;
-
+            height: 50px;
             background: #5F6754;
             color: white;
             border: none;
@@ -46,6 +46,7 @@
         }
 
         .sonando {
+            height: 30px;
             background: #333;
         }
     </style>
