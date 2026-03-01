@@ -587,6 +587,18 @@ h2.section-title {
     font-size: 3rem !important;
 }
 
+.padres-intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    color: #6b6b6b;
+}
+
+.padres-nombres {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    line-height: 1.8;
+    color: #3f4a4f;
+}
 .mass-grid {
     display: flex;
     align-items: center;
@@ -732,7 +744,7 @@ h2.section-title {
 
 
 .nombres{
-    max-width: 20%;
+    max-width: 30%;
 }
 
 @media (max-width: 768px) {

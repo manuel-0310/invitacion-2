@@ -20,18 +20,48 @@ const timer = setInterval(function() {
     }
 }, 1000);
 
-const audio = document.getElementById("miMusica");
-const btnMusica = document.getElementById("btnMusica");
-const texto = document.getElementById("texto");
+window.addEventListener("DOMContentLoaded", () => {
+    const audio = document.getElementById("miMusica");
+    const btnMusica = document.getElementById("btnMusica");
+    const texto = document.getElementById("texto");
 
-btnMusica.addEventListener("click", () => {
-    if (audio.paused) {
+    const debeReproducir = localStorage.getItem("reproducirMusica");
+
+    if (debeReproducir === "true") {
         audio.play();
         btnMusica.classList.add("sonando");
         texto.innerText = "Pausar";
-    } else {
-        audio.pause();
-        btnMusica.classList.remove("sonando");
-        texto.innerText = "Reproducir canción";
+        localStorage.removeItem("reproducirMusica");
     }
+
+    btnMusica.addEventListener("click", () => {
+        if (audio.paused) {
+            audio.play();
+            btnMusica.classList.add("sonando");
+            texto.innerText = "Pausar";
+        } else {
+            audio.pause();
+            btnMusica.classList.remove("sonando");
+            texto.innerText = "Reproducir canción";
+        }
+    });
 });
+
+function iniciarSonidoMusicaDesdeIntro() {
+    const audio = document.getElementById("miMusica");
+    const btnMusica = document.getElementById("btnMusica");
+    const texto = document.getElementById("texto");
+
+    if (!audio || !btnMusica || !texto) {
+        return;
+    }
+
+    audio.play().then(() => {
+        btnMusica.classList.add("sonando");
+        texto.innerText = "Pausar";
+    }).catch(() => {
+        texto.innerText = "Reproducir canción";
+    });
+}
+
+window.iniciarMusicaDesdeIntro = iniciarSonidoMusicaDesdeIntro;
