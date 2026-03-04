@@ -1,6 +1,6 @@
 const weddingDate = new Date("Jul 19, 2026 15:00:00").getTime();
 
-const timer = setInterval(function() {
+const timer = setInterval(function () {
     const now = new Date().getTime();
     const distance = weddingDate - now;
 
@@ -65,3 +65,31 @@ function iniciarSonidoMusicaDesdeIntro() {
 }
 
 window.iniciarMusicaDesdeIntro = iniciarSonidoMusicaDesdeIntro;
+
+
+(function () {
+    emailjs.init("O9TA18-zps7iaEptM");
+})();
+
+
+const btn = document.getElementById('button-send');
+
+document.getElementById('rsvp-form').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    btn.innerText = 'ENVIANDO...';
+    btn.style.opacity = '0.7';
+
+    emailjs.sendForm('service_6m7prwn', 'template_41pvc6t', this)
+        .then(() => {
+            btn.innerText = '¡ENVIADO CON ÉXITO!';
+            btn.style.backgroundColor = '#27ae60';
+            alert('¡Gracias! Tu confirmación ha sido recibida.');
+            this.reset();
+        }, (err) => {
+            btn.innerText = 'ERROR AL ENVIAR';
+            btn.style.backgroundColor = '#e74c3c';
+            alert('Hubo un error: ' + JSON.stringify(err));
+        });
+});
+
