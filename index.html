@@ -4,181 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Invitación Especial</title>
-    <link rel="stylesheet" href="stylesmain.css">
+    <title>Invitación — Luisa & Leonardo</title>
+    <link rel="stylesheet" href="styles3.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;500&family=Great+Vibes&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300;1,400&family=Great+Vibes&display=swap"
         rel="stylesheet">
-    <style>
-        :root {
-            --color-dorado: #c5a059;
-            --fondo-crema: #fdfaf6;
-        }
-
-        body {
-            min-height: 100vh;
-        }
-
-        #intro-overlay {
-            position: fixed;
-            inset: 0;
-            background-color: var(--fondo-crema);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 24px;
-            z-index: 1000;
-            transition: opacity 0.7s ease;
-        }
-
-        #intro-overlay.ocultar-overlay {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .escena {
-            position: relative;
-            width: 420px;
-            height: 320px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        #sello {
-            position: absolute;
-            z-index: 10;
-            width: 200px;
-            cursor: pointer;
-            transition: opacity 1s ease, transform 1.5s ease;
-        }
-
-        .girar-desvanecer {
-            transform: rotate(360deg) scale(1.2);
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .sobre {
-            position: absolute;
-            width: 180%;
-            max-width: 720px;
-            height: auto;
-
-            transition: opacity 0.8s ease;
-        }
-
-        #sobre-abierto {
-            opacity: 0;
-        }
-
-        .tarjeta-intro {
-            position: absolute;
-            width: 75%;
-            height: 150px;
-            background: white;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-            border: 1px solid #eee;
-            z-index: 2;
-            transform: translateY(0);
-            opacity: 0;
-            transition: transform 1.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
-            font-family: 'Times New Roman', serif;
-        }
-
-        .tarjeta-intro h2 {
-            color: var(--color-dorado);
-            font-style: italic;
-            font-weight: lighter;
-            font-size: 1.8rem;
-            margin: 0;
-        }
-
-        .subir-tarjeta {
-            transform: translateY(-120px);
-            opacity: 1;
-        }
-
-        #btn-continuar {
-            position: absolute;
-            bottom: -90px;
-            padding: 10px 32px;
-            background-color: var(--color-dorado);
-            color: white;
-            border: none;
-            border-radius: 20px;
-            cursor: pointer;
-            opacity: 0;
-            transition: opacity 1s ease;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.9rem;
-        }
-
-        .mostrar-boton {
-            opacity: 1 !important;
-        }
-
-        #main-content.hidden {
-            display: none;
-        }
-
-        .boton-flotante {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 9999;
-            height: 50px;
-            background: #5F6754;
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 50px;
-            font-weight: bold;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: 0.3s;
-        }
-
-        .boton-flotante:hover {
-            transform: scale(1.05);
-        }
-
-        .sonando {
-            height: 30px;
-            background: #333;
-        }
-    </style>
 </head>
 
 <body>
+
+    <!-- ════════════════════════════════
+         INTRO OVERLAY
+    ════════════════════════════════ -->
     <div id="intro-overlay">
         <div class="escena">
             <img src="src/sello.png" id="sello" alt="Sello de cera">
-
             <img src="src/sobre-cerrado.png" id="sobre-cerrado" class="sobre" alt="Sobre cerrado">
-
             <img src="src/sobre-abierto.png" id="sobre-abierto" class="sobre" alt="Sobre abierto">
-
             <div class="tarjeta-intro" id="tarjeta-intro">
                 <h2>Eres un invitado especial</h2>
             </div>
-
             <button id="btn-continuar" type="button">Continuar</button>
         </div>
     </div>
 
+    <!-- ════════════════════════════════
+         CONTENIDO PRINCIPAL
+    ════════════════════════════════ -->
     <div id="main-content" class="hidden">
+
         <audio id="miMusica" loop>
             <source src="src/cancion.mp3" type="audio/mpeg">
         </audio>
@@ -187,233 +42,166 @@
             <span id="texto">Reproducir canción</span>
         </button>
 
+        <!-- ── 1. HERO ── -->
         <header class="hero">
             <div class="hero-content">
-                <h1>Luisa Galindo y <br>Leonardo Gil</h1>
-
-
+                <h1>Luisa<span class="hero-ampersand">&amp;</span>Leonardo</h1>
+                <p class="hero-date">19 de Julio &nbsp;·&nbsp; 2026 &nbsp;·&nbsp; 3:00 PM</p>
             </div>
         </header>
 
-        <div class="countdown-section">
-            <div style="text-align: center; justify-content: left; justify-items: left;">
-                <p class="padres-intro">Con la bendición de nuestros padres</p>
-
-                <p class="padres-nombres">
-                    Humberto Galindo Ramírez & ⁠Claudia Patricia Quiroga Cuervo<br>
-                    ⁠⁠Misael Gil Cardenas & ⁠⁠Elsa Vargas Buitrago
-
-                </p>
-            </div>
-        </div>
-        <div class="divider"><img src="src/separador.png" alt="decoración" style="margin-bottom: -45px; "></div>
-
-        <section class="countdown-section">
-            <h2 class="script-font">Cuenta regresiva</h2>
-            <p class="subtitle">para el día de nuestro matrimonio</p>
-
-            <div id="timer">
-                <div class="time-box">
-                    <span id="days">00</span>
-                    <label>DÍAS</label>
-                </div>
-                <div class="time-box">
-                    <span id="hours">00</span>
-                    <label>HORAS</label>
-                </div>
-                <div class="time-box">
-                    <span id="minutes">00</span>
-                    <label>MINUTOS</label>
-                </div>
-                <div class="time-box">
-                    <span id="seconds">00</span>
-                    <label>SEGUNDOS</label>
-                </div>
-            </div>
-            <p class="wedding-date">19 de Julio, 2026. 3:00 PM</p>
+        <!-- ── 2. PADRES ── -->
+        <section class="padres-section">
+            <p class="padres-intro">Con la bendición de nuestros padres</p>
+            <p class="padres-nombres">
+                Humberto Galindo Ramírez &amp; Claudia Patricia Quiroga Cuervo<br>
+                Misael Gil Cárdenas &amp; Elsa Vargas Buitrago
+            </p>
         </section>
 
-        <div class="divider"><img src="src/separador.png" alt="decoración"></div>
-
+        <!-- ── 3. HISTORIA ── -->
         <section class="story-section">
-            <h2 class="script-font">Nuestra historia</h2>
-            <div class="story-text" style="font-family: 'Times New Roman';">
-                <i>Nuestra historia</i>, es un testimonio de la bondad de Dios y de su inmenso corazón, que permitió que
+            <div class="divider-line"><span>✦</span></div>
+            <h2 class="section-title" style="margin-top:22px;">Nuestra historia</h2>
+            <div class="story-text">
+                <p><i>Nuestra historia</i>, es un testimonio de la bondad de Dios y de su inmenso corazón, que permitió que
                 nuestras vidas se encontraran en el momento perfecto. Como un hilo rojo, el destino nos unió
                 recordándonos que lo que está llamado a encontrarse siempre lo hace, aunque la distancia o el tiempo
-                intenten separarlo. <br><br>
-                El lugar de nuestro primer encuentro fue testigo de ese comienzo que se transformó en raíz y en hogar,
+                intenten separarlo.</p>
+
+                <p>El lugar de nuestro primer encuentro fue testigo de ese comienzo que se transformó en raíz y en hogar,
                 un espacio lleno de respeto, ilusión y sueños compartidos, con Dios guiando nuestro camino y el amor
-                como motor.<br><br>
-                Hoy seguimos escribiendo nuestra historia, construyendo sueños y diciendo sí cada día, porque hay amores
-                que estremecen el alma y dan sentido a la vida cuando se está junto a la persona correcta. <br><br>
-                <i style="text-align: right;">– Leo & Lu</i><br><br>
-                <i style="font-size:1.2rem; font-style: italic; ">Hoy nuestros sueños se abrazan bajo dos bendiciones
-                    que guían
-                    nuestro camino: Dios y el amor. Con el
-                    corazón lleno de gratitud y emoción, queremos compartir este momento tan especial que marca nuestro
-                    camino juntos, invitándolos a ser parte de nuestra boda, agradeciendo el regalo de poder tener una
-                    familia y la bendición de tenerlos en nuestras vidas.</i>
+                como motor.</p>
 
+                <p>Hoy seguimos escribiendo nuestra historia, construyendo sueños y diciendo sí cada día, porque hay amores
+                que estremecen el alma y dan sentido a la vida cuando se está junto a la persona correcta.</p>
 
-                </p>
+                <p><i>Hoy nuestros sueños se abrazan bajo dos bendiciones que guían nuestro camino: Dios y el amor.
+                Con el corazón lleno de gratitud y emoción, queremos compartir este momento tan especial que marca
+                nuestro camino juntos, invitándolos a ser parte de nuestra boda, agradeciendo el regalo de poder
+                tener una familia y la bendición de tenerlos en nuestras vidas.</i></p>
+
+                <p class="story-signature">– Leo &amp; Lu</p>
             </div>
         </section>
 
-        <div class="divider"><img src="src/separador.png" alt="decoración"></div>
-
+        <!-- ── 4. GALERÍA — filmstrip horizontal ── -->
         <section class="gallery-section">
-            <h2 class="script-font">Nuestro compromiso</h2>
-            <div class="masonry-gallery">
-                <div class="photo"><img src="src/1.jpg" alt="Compromiso"></div>
-                <div class="photo"><img src="src/2.jpg" alt="Compromiso"></div>
-                <div class="photo"><img src="src/3.jpg" alt="Compromiso"></div>
-                <div class="photo"><img src="src/4.jpg" alt="Compromiso"></div>
-                <div class="photo"><img src="src/5.jpg" alt="Compromiso"></div>
-                <div class="photo"><img src="src/6.jpg" alt="Compromiso"></div>
-                <div class="photo"><img src="src/7.jpg" alt="Compromiso"></div>
-                <div class="photo"><img src="src/8.jpg" alt="Compromiso"></div>
-                <div class="photo"><img src="src/9.jpg" alt="Compromiso"></div>
-                <div class="photo"><img src="src/10.jpg" alt="Compromiso"></div>
-                <div class="photo"><img src="src/11.jpg" alt="Compromiso"></div>
-                <div class="photo"><img src="src/12.jpg" alt="Compromiso"></div>
-                <div class="photo"><img src="src/13.jpg" alt="Compromiso"></div>
-                <div class="photo"><img src="src/14.jpg" alt="Compromiso"></div>
-                <div class="photo"><img src="src/15.jpg" alt="Compromiso"></div>
-                <div class="photo"><img src="src/16.jpg" alt="Compromiso"></div>
-                <div class="photo"><img src="src/17.jpg" alt="Compromiso"></div>
+            <h2 class="section-title">Nuestro compromiso</h2>
+            <p class="section-subtitle">desliza para ver más →</p>
+
+            <div class="filmstrip-wrapper" id="filmstrip">
+                <div class="filmstrip">
+                    <div class="photo"><img src="src/1.jpg"  alt="Compromiso"></div>
+                    <div class="photo"><img src="src/2.jpg"  alt="Compromiso"></div>
+                    <div class="photo"><img src="src/3.jpg"  alt="Compromiso"></div>
+                    <div class="photo"><img src="src/4.jpg"  alt="Compromiso"></div>
+                    <div class="photo"><img src="src/5.jpg"  alt="Compromiso"></div>
+                    <div class="photo"><img src="src/6.jpg"  alt="Compromiso"></div>
+                    <div class="photo"><img src="src/7.jpg"  alt="Compromiso"></div>
+                    <div class="photo"><img src="src/8.jpg"  alt="Compromiso"></div>
+                    <div class="photo"><img src="src/9.jpg"  alt="Compromiso"></div>
+                    <div class="photo"><img src="src/10.jpg" alt="Compromiso"></div>
+                    <div class="photo"><img src="src/11.jpg" alt="Compromiso"></div>
+                    <div class="photo"><img src="src/12.jpg" alt="Compromiso"></div>
+                    <div class="photo"><img src="src/13.jpg" alt="Compromiso"></div>
+                    <div class="photo"><img src="src/14.jpg" alt="Compromiso"></div>
+                    <div class="photo"><img src="src/15.jpg" alt="Compromiso"></div>
+                    <div class="photo"><img src="src/16.jpg" alt="Compromiso"></div>
+                    <div class="photo"><img src="src/17.jpg" alt="Compromiso"></div>
+                </div>
+            </div>
+            <p class="filmstrip-hint">· · ·</p>
+        </section>
+
+        <!-- ── 5. CUENTA REGRESIVA ── -->
+        <section class="countdown-section">
+            <h2 class="section-title">Cuenta regresiva</h2>
+            <p class="subtitle">para el día de nuestro matrimonio</p>
+            <div id="timer">
+                <div class="time-box"><span id="days">00</span><label>Días</label></div>
+                <div class="time-box"><span id="hours">00</span><label>Horas</label></div>
+                <div class="time-box"><span id="minutes">00</span><label>Minutos</label></div>
+                <div class="time-box"><span id="seconds">00</span><label>Segundos</label></div>
+            </div>
+            <p class="wedding-date">19 de Julio, 2026 &nbsp;·&nbsp; 3:00 PM</p>
+        </section>
+
+        
+
+        <!-- ── 6. NUESTRO GRAN DÍA ── -->
+        <section class="timeline-section">
+            <h2 class="section-title">Nuestro gran día</h2>
+            <p class="section-subtitle">19 de Julio, 2026</p>
+
+            <div class="timeline-grid">
+                <div class="tl-item">
+                    <img src="src/bienvenidos.png" alt="Llegada">
+                    <p class="tl-hora">2:30 PM – Hora de llegada</p>
+                </div>
+                <div class="tl-item">
+                    <img src="src/anillos.png" alt="Ceremonia">
+                    <p class="tl-hora">3:00 PM – Ceremonia</p>
+                </div>
+                <div class="tl-item">
+                    <img src="src/bebida.png" alt="Cóctel">
+                    <p class="tl-hora">4:30 PM – Cóctel</p>
+                </div>
+                <div class="tl-item">
+                    <img src="src/cena.png" alt="Recepción">
+                    <p class="tl-hora">6:30 PM – Recepción</p>
+                </div>
             </div>
         </section>
-        <!--
-    <div class="divider"><img src="src/separador.png" alt="decoración"></div>
-    <section class="timeline-section">
-        <h2 class="script-font">Nuestro gran día</h2>
-        <p><b>*Cronograma*</b></p>
-        <div class="timeline-container">
 
-            <div class="timeline-event">
-                <div class="event-icon">
-                    <img src="src/bienvenidos.png" alt="Icono">
-                </div>
-                <div class="event-content">
-                    <h3>2:30 PM – Hora de llegada</h3>
-                    <p>*Aqui se pueden colocar descripciones* </p>
-                </div>
-            </div>
 
-            <div class="timeline-event">
-                <div class="event-icon">
-                    <img src="src/anillos.png" alt="Icono">
-                </div>
-                <div class="event-content">
-                    <h3>3:00 PM Santa Misa y Rito de Matrimonio</h3>
-                </div>
-            </div>
-
-            <div class="timeline-event">
-                <div class="event-icon">
-                    <img src="src/bebida.png" alt="Icono">
-                </div>
-                <div class="event-content">
-                    <h3>5:00 PM – Cóctel</h3>
-                </div>
-            </div>
-
-            <div class="timeline-event">
-                <div class="event-icon">
-                    <img src="src/cena.PNG" alt="Icono">
-                </div>
-                <div class="event-content">
-                    <h3>6:00 PM – Cena</h3>
-                </div>
-            </div>
-
-        </div>
-    </section>
--->
-        <div class="divider"><img src="src/separador.png" alt="decoración"></div>
+        <!-- ── 7. CÓDIGO DE VESTIMENTA ── -->
         <section class="dresscode-section">
-            <h2 class="script-font">Código de vestimenta</h2>
-
+            <h2 class="section-title">Código de vestimenta</h2>
             <div class="dresscode-container">
                 <p class="dresscode-intro">Vestimenta formal</p>
-                <!--
-            <div class="dresscode-details">
-                <div class="gender-dress">
-                    <strong>CABALLEROS</strong>
-                    <p>*Recomendaciones para los caballeros*</p>
-                </div>
-
-                <div class="gender-dress">
-                    <strong>DAMAS</strong>
-                    <p>*Recomendaciones para las damas*</p>
-                </div>
-            </div>
-        -->
                 <div class="dresscode-image">
-                    <img src="src/vestimenta.png" alt="Inspiración Vestimenta" class="dresscode-image">
+                    <img src="src/vestimenta.png" alt="Inspiración Vestimenta" style="border-radius:10px;">
                 </div>
                 <p class="color-reserve">Nota: El color blanco y beige quedan reservados</p>
-
-
             </div>
+        </section>
 
-            <div class="divider"><img src="src/separador.png" alt="decoración"></div>
-            <div class="tarjeta" id="tarjeta">
-                <div class="contenido-tarjeta">
-                    <div class="lluvia-sobres">
-                        <img src="src/sobre-cerrado.PNG" alt="Sobre"
-                            style="width: 200px; margin-bottom: -40px; margin-top: -50px;">
-                        <p style="font-family: 'Great Vibes', cursive; font-size: 2rem; margin: 0;">Lluvia de Sobres</p>
-                    </div>
+        <!-- ── 8. LLUVIA DE SOBRES ── -->
+        <div class="tarjeta" id="tarjeta">
+            <div class="contenido-tarjeta">
+                <div class="lluvia-sobres">
+                    <img src="src/sobre-cerrado.PNG" alt="Sobre"
+                        style="width:200px; margin-bottom:-40px; margin-top:-50px;">
+                    <p style="font-family:'Great Vibes', cursive; font-size:2rem; margin:0;">Lluvia de Sobres</p>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <div class="divider"><img src="src/separador.png" alt="decoración"></div>
+        <!-- ── 9. UBICACIÓN ── -->
         <section class="location-section">
-            <h2 class="script-font">Ubicación</h2>
+            <h2 class="section-title">Ubicación</h2>
             <p class="location-name"><b>Hotel Punta Larga</b></p>
             <div class="location-image">
-                <img src="src/hotel.jpg" alt="Hotel" class="hacienda-img">
+                <img src="src/hotel.jpg" alt="Hotel Punta Larga" class="hacienda-img">
             </div>
-            <!--
-        <section class="gallery-section">
-            <div class="masonry-gallery">
-                <div class="photo"><img src="src/hacienda1.jpg" alt="Compromiso"></div>
-                <div class="photo"><img src="src/hacienda2.jpg" alt="Compromiso"></div>
-                <div class="photo"><img src="src/hacienda3.jpg" alt="Compromiso"></div>
-                <div class="photo"><img src="src/hacienda4.jpg" alt="Compromiso"></div>
-                <div class="photo"><img src="src/hacienda5.jpg" alt="Compromiso"></div>
-                <div class="photo"><img src="src/hacienda6.jpg" alt="Compromiso"></div>
-                <div class="photo"><img src="src/hacienda7.jpg" alt="Compromiso"></div>
-                <div class="photo"><img src="src/hacienda8.jpg" alt="Compromiso"></div>
-                <div class="photo"><img src="src/hacienda9.jpg" alt="Compromiso"></div>
-                <div class="photo"><img src="src/hacienda10.jpg" alt="Compromiso"></div>
-                <div class="photo"><img src="src/hacienda12.jpg" alt="Compromiso"></div>
-            </div>
-        </section>
-    -->
             <div class="map-container">
-
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3969.5506239045912!2d-72.9777486!3d5.7775975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e6a473bcc0eaa57%3A0xfe713f753db6fc08!2sHotel%20Puntalarga!5e0!3m2!1ses-419!2sco!4v1772150717484!5m2!1ses-419!2sco"
                     width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
         </section>
-        <div class="divider"><img src="src/separador.png" alt="decoración" style="margin-bottom: -25px; "></div>
 
-        <img src="src/logo.png" alt="nombres" class="nombres" style="margin-bottom: -30px; border-radius: 5%;">
-
-        <div class="divider"><img src="src/separador.png" alt="decoración"></div>
-
+        <!-- ── 10. RSVP ── -->
         <section class="rsvp-section">
-            <h2 class="script-font section-title">Confirma tu asistencia</h2>
+            <h2 class="section-title">Confirma tu asistencia</h2>
             <p class="section-subtitle">¡Esperamos contar contigo!</p>
 
             <div class="rsvp-container">
                 <form id="rsvp-form" class="styled-form">
                     <input type="hidden" name="couple_name" value="Luisa & Leonardo">
+
                     <div class="input-row">
                         <div class="form-group">
                             <label for="from_name">Nombres *</label>
@@ -449,11 +237,64 @@
                     <button type="submit" id="button-send" class="btn-primary">Enviar</button>
                 </form>
             </div>
-            <div class="divider"><img src="src/separador.png" alt="decoración" style="margin-bottom: -25px; "></div>
 
-            <img src="src/logo.png" alt="nombres" class="nombres" style="margin-bottom: -30px; border-radius: 5%;">
-
+            <div style="margin-top: 50px;">
+                <img src="src/logo.png" alt="nombres" class="nombres">
+            </div>
         </section>
+
+        <!-- ── SCRIPTS ── -->
+        <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+        <script src="scriptmain.js"></script>
+        <script>
+            /* ── intro ── */
+            const sello          = document.getElementById('sello');
+            const botonContinuar = document.getElementById('btn-continuar');
+            const sobreCerrado   = document.getElementById('sobre-cerrado');
+            const sobreAbierto   = document.getElementById('sobre-abierto');
+            const tarjetaIntro   = document.getElementById('tarjeta-intro');
+            const overlay        = document.getElementById('intro-overlay');
+            const mainContent    = document.getElementById('main-content');
+
+            function iniciarAnimacion() {
+                sello.classList.add('girar-desvanecer');
+                setTimeout(() => { sobreCerrado.style.opacity='0'; sobreAbierto.style.opacity='1'; }, 1000);
+                setTimeout(() => { tarjetaIntro.classList.add('subir-tarjeta'); }, 1800);
+                setTimeout(() => { botonContinuar.classList.add('mostrar-boton'); }, 2800);
+            }
+
+            function continuarIntro() {
+                overlay.classList.add('ocultar-overlay');
+                mainContent.classList.remove('hidden');
+                if (window.iniciarMusicaDesdeIntro) window.iniciarMusicaDesdeIntro();
+                setTimeout(() => { overlay.style.display='none'; }, 750);
+            }
+
+            sello.addEventListener('click', iniciarAnimacion);
+            botonContinuar.addEventListener('click', continuarIntro);
+
+            /* ── filmstrip drag-to-scroll ── */
+            const strip = document.getElementById('filmstrip');
+            let isDown = false, startX, scrollLeft;
+
+            strip.addEventListener('mousedown', e => {
+                isDown = true;
+                strip.classList.add('grabbing');
+                startX = e.pageX - strip.offsetLeft;
+                scrollLeft = strip.scrollLeft;
+            });
+            strip.addEventListener('mouseleave', () => { isDown = false; strip.classList.remove('grabbing'); });
+            strip.addEventListener('mouseup',    () => { isDown = false; strip.classList.remove('grabbing'); });
+            strip.addEventListener('mousemove',  e => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - strip.offsetLeft;
+                strip.scrollLeft = scrollLeft - (x - startX) * 1.4;
+            });
+        </script>
+
+        <!-- ── FOOTER ── -->
         <footer class="footer-boda">
             <div class="footer-content">
                 <div class="footer-logo">
@@ -463,7 +304,7 @@
                 <div class="footer-info">
                     <div class="footer-section">
                         <span class="nombre-planner">Alejandra Riveros</span>
-                        <span class="rol-planner">WEDDING PLANNER</span>
+                        <span class="rol-planner">Wedding Planner</span>
                     </div>
                     <div class="footer-section">
                         <span class="nombre-planner">Celular</span>
@@ -472,53 +313,7 @@
                 </div>
             </div>
         </footer>
-    </div>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
-    <script src="scriptmain.js"></script>
-
-    <script>
-        const sello = document.getElementById('sello');
-        const botonContinuar = document.getElementById('btn-continuar');
-        const sobreCerrado = document.getElementById('sobre-cerrado');
-        const sobreAbierto = document.getElementById('sobre-abierto');
-        const tarjetaIntro = document.getElementById('tarjeta-intro');
-        const overlay = document.getElementById('intro-overlay');
-        const mainContent = document.getElementById('main-content');
-
-        function iniciarAnimacion() {
-            sello.classList.add('girar-desvanecer');
-
-            setTimeout(() => {
-                sobreCerrado.style.opacity = '0';
-                sobreAbierto.style.opacity = '1';
-            }, 1000);
-
-            setTimeout(() => {
-                tarjetaIntro.classList.add('subir-tarjeta');
-            }, 1800);
-
-            setTimeout(() => {
-                botonContinuar.classList.add('mostrar-boton');
-            }, 2800);
-        }
-
-        function continuarIntro() {
-            overlay.classList.add('ocultar-overlay');
-            mainContent.classList.remove('hidden');
-
-            if (window.iniciarMusicaDesdeIntro) {
-                window.iniciarMusicaDesdeIntro();
-            }
-
-            setTimeout(() => {
-                overlay.style.display = 'none';
-            }, 750);
-        }
-
-        sello.addEventListener('click', iniciarAnimacion);
-        botonContinuar.addEventListener('click', continuarIntro);
-    </script>
+    </div><!-- fin #main-content -->
 </body>
-
 </html>
