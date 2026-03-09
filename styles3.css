@@ -781,7 +781,7 @@ h2.section-title {
     .logo-footer-icon { height: 110px; }
     .logo-footer-name { height: 30px; }
 
-    .nombres { max-width: 25%; }
+    .nombres { max-width: 55%; }
 
 
 @media (max-width: 480px) {
