@@ -681,9 +681,11 @@ h2.section-title {
 
 /* ====== LOGO / NOMBRES ====== */
 .nombres {
-    max-width: 1%;
+    width: 30%;
+    max-width: 520px;
     margin-bottom: -20px;
     border-radius: 5%;
+    margin-top: 40px;
 }
 
 /* ====== FOOTER ====== */
@@ -768,6 +770,9 @@ h2.section-title {
         height: 260px;
     }
     .filmstrip { padding: 0 20px 16px; gap: 10px; }
+    .nombres {
+        width: 60%;
+    }
 }
 
     .map-container iframe { height: 250px !important; }
@@ -781,7 +786,7 @@ h2.section-title {
     .logo-footer-icon { height: 110px; }
     .logo-footer-name { height: 30px; }
 
-    .nombres { max-width: 55%; }
+
 
 
 @media (max-width: 480px) {
@@ -798,6 +803,10 @@ h2.section-title {
 
     .tl-item img { width: 75px; height: 75px; }
     .tl-hora { font-size: 1.05rem; }
+
+
+    
+
 }
 
 a[href^="tel"] {
