@@ -460,6 +460,7 @@ h2.section-title {
     max-width: 480px;
     margin: 0 auto;
     gap: 6px;
+    align-items: center;
 }
 
 .tl-item {
