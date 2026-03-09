@@ -799,3 +799,8 @@ h2.section-title {
     .tl-item img { width: 75px; height: 75px; }
     .tl-hora { font-size: 1.05rem; }
 }
+
+a[href^="tel"] {
+    color: #a1a1a1 !important;
+    text-decoration: none !important;
+}
